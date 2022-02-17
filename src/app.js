@@ -2,9 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { isInvalid } from './lib/template-helpers.js';
 import { indexRouter } from './routes/index-routes.js';
-require("dotenv").config();
 
 dotenv.config();
 
