@@ -4,6 +4,7 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { indexRouter } from './routes/index-routes.js';
 
+
 dotenv.config();
 
 const { PORT: port = 3000 } = process.env;
@@ -18,6 +19,7 @@ const path = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(join(path, '../public')));
 app.set('views', join(path, '../views'));
 app.set('view engine', 'ejs');
+
 
 app.locals = {
   // TODO hjálparföll fyrir template
