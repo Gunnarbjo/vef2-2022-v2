@@ -1,12 +1,13 @@
 {
   "name": "vef2-2022-v2-synilausn",
   "version": "1.0.0",
-  "description": "",
+  "description": "[Kynning á verkefni í tíma](https://youtu.be/pLwY4LiR6gc).",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "dotenv -e .env -- nodemon ./src/app.js",
-    "start": "dotenv -e .env node ./src/app.js",
+    "build": "node ./src/setup.js",
+    "dev": "dotenv -e .env -- nodemon ./src/setup.js",
+    "start": "dotenv -e .env node ./src/setup.js",
     "setup": "dotenv -e .env node ./src/setup.js",
     "test": "NODE_ENV=test NODE_OPTIONS='--experimental-vm-modules' dotenv -e .env.test -- jest ./*.test.js",
     "test-watch": "NODE_ENV=test NODE_OPTIONS='--experimental-vm-modules' dotenv -e .env.test -- jest ./*.test.js",
@@ -21,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "build": "^0.1.4",
     "dotenv": "^14.3.2",
     "dotenv-cli": "^4.1.1",
     "ejs": "^3.1.6",
@@ -30,6 +32,7 @@
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
     "pg": "^8.7.1",
+    "rest": "^2.0.0",
     "xss": "^1.0.10"
   },
   "devDependencies": {
@@ -44,5 +47,13 @@
     "stylelint": "^14.3.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^24.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gunnarbjo/vef2-2022-v2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gunnarbjo/vef2-2022-v2/issues"
+  },
+  "homepage": "https://github.com/Gunnarbjo/vef2-2022-v2#readme"
 }
