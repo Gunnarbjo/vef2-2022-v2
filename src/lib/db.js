@@ -62,3 +62,8 @@ export async function end() {
 }
 
 /* TODO útfæra aðgeðir á móti gagnagrunni */
+
+export async function listEvents(){
+  const events = query('select * from events;');
+    return events;
+}

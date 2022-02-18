@@ -10,6 +10,7 @@ dotenv.config();
 const{
   DATABASE_URL: connectionString = 'postgres://:@localhost/postgres',
   NODE_ENV: nodeEnv = 'development',
+  PORT: port = 3000 
 } = process.env;
 
 //const { PORT: port = 3000 } = process.env;
