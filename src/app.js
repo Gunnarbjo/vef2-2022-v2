@@ -1,13 +1,18 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import { dirname, join } from 'path';
+import { dirname, format, join } from 'path';
 import { fileURLToPath } from 'url';
 import { indexRouter } from './routes/index-routes.js';
 
 
 dotenv.config();
 
-const { PORT: port = 3000 } = process.env;
+const{
+  DATABASE_URL: connectionString = 'postgres://:@localhost/postgres',
+  NODE_ENV: nodeEnv = 'development',
+} = process.env;
+
+//const { PORT: port = 3000 } = process.env;
 
 const app = express();
 
@@ -21,12 +26,20 @@ app.set('views', join(path, '../views'));
 app.set('view engine', 'ejs');
 
 
-app.locals = {
+app.locals.Date = (str) =>  {
   // TODO hjálparföll fyrir template
+  let date = "";
+  try{
+    date = format(str || "", "dd.MM.yyyy");
+  }catch{
+    return "";
+  }
+  return date;
 };
 
 app.use('/', indexRouter);
 // TODO admin routes
+//app.use('/admin',adminRouter);
 
 /** Middleware sem sér um 404 villur. */
 app.use((req, res) => {

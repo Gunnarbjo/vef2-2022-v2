@@ -15,3 +15,8 @@ async function indexRoute(req, res) {
 indexRouter.get('/', catchErrors(indexRoute));
 
 // TODO útfæra öll routes
+/*const routes = {
+  '/' : home,
+  '/views/login.ejs' : login
+}*/
+
